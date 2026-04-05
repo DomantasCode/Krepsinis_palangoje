@@ -20,12 +20,12 @@ const news: NewsItem[] = [
   {
     tag: "PRANEŠIMAS",
     tagColor: "bg-primary text-white",
-    title: "Naujas treneris iš Eurolygos akademijos",
+    title: "„Neptūne” ir toliau žais M. Girdžiūnas",
     summary:
-      "Džiaugiamės pranešę, kad nuo liepos mėnesio prie mūsų šeimos jungiasi treneris Arvydas.",
+      "Mindaugas Girdžiūnas toliau vilkės mėlynai baltus marškinėlius. Klaipėdoje augęs žaidėjas sutartį su „Neptūnu“ pratęsė dar metams.",
     fullText:
-      "Treneris Arvydas turi daugiau nei 15 metų patirtį dirbant su jaunaisiais krepšininkais Eurolygos akademijose. Jo specializacija – individualus žaidėjų tobulėjimas ir metimo technika. Arvydas prisijungs prie komandos liepos mėnesį ir ves vasaros stovyklos treniruotes. Tai puiki galimybė jauniesiems krepšininkams mokytis iš aukščiausio lygio specialisto.",
-    image: "/news-coach.png",
+      "Mindaugas Girdžiūnas toliau vilkės mėlynai baltus marškinėlius ir atstovaus savo gimtojo miesto komandai. Su gynėju sutartis pratęsta dar vieneriems metams.\n\n„Mūsų klubui labai svarbu išlaikyti tokį žaidėją kaip Mindaugas, kuris Klaipėdoje augęs ir užaugęs, o savo darbo etika ir noru varžytis yra pavyzdys komandos draugams“, – dalijosi klubo atstovai.\n\nIš praėjusio sezono sudėties pajūryje be jo taip pat lieka Deividas Gailius, Žygimantas Janavičius, Martynas Pacevičius bei Tomaš Pavelka.",
+    image: "/XXWKKkaL8asfND3MtBygD4uIHGN8jJcsYezjUFmB.jpg",
     bg: "bg-slate-900",
     textColor: "text-white",
     span: 2,

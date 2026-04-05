@@ -70,7 +70,7 @@ export default function Hero() {
             />
             <button
               onClick={toggleMute}
-              className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-colors"
+              className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-colors cursor-pointer"
               aria-label={isMuted ? "Įjungti garsą" : "Išjungti garsą"}
             >
               <span className="material-symbols-outlined text-xl">

@@ -8,8 +8,8 @@ export default function Registration() {
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-primary via-primary-container to-tertiary" />
 
       {/* Decorative elements */}
-      <div className="absolute top-16 right-8 md:right-16 w-32 h-32 border-2 border-primary/10 rounded-full" />
-      <div className="absolute bottom-16 left-8 md:left-16 w-24 h-24 border-2 border-tertiary/10 rounded-full" />
+      <div className="hidden md:block absolute top-16 right-8 md:right-16 w-32 h-32 border-2 border-primary/10 rounded-full" />
+      <div className="hidden md:block absolute bottom-16 left-8 md:left-16 w-24 h-24 border-2 border-tertiary/10 rounded-full" />
 
       <div className="relative max-w-4xl mx-auto px-4 md:px-6">
         {/* Header */}

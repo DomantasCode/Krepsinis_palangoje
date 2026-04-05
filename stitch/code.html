@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="lt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic Coastal | Krepšinio treniruotės Palangoje</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#2d2f2f",
+                    "on-tertiary-fixed": "#003840",
+                    "tertiary": "#006573",
+                    "on-tertiary-fixed-variant": "#005763",
+                    "tertiary-fixed-dim": "#3cd2eb",
+                    "outline": "#767777",
+                    "secondary-container": "#ffc3bd",
+                    "on-secondary-fixed": "#700009",
+                    "surface-container-low": "#f0f1f1",
+                    "on-secondary-fixed-variant": "#a50314",
+                    "primary-fixed": "#ff793e",
+                    "secondary": "#b5161e",
+                    "on-tertiary": "#daf8ff",
+                    "surface-dim": "#d3d5d5",
+                    "error-dim": "#9f0519",
+                    "on-primary-fixed": "#000000",
+                    "surface-container-high": "#e1e3e3",
+                    "on-surface-variant": "#5a5c5c",
+                    "error": "#b31b25",
+                    "surface-tint": "#a13900",
+                    "inverse-surface": "#0c0f0f",
+                    "outline-variant": "#acadad",
+                    "on-primary-fixed-variant": "#521900",
+                    "on-secondary-container": "#940010",
+                    "on-secondary": "#ffefed",
+                    "surface-bright": "#f6f6f6",
+                    "primary-fixed-dim": "#fe5f00",
+                    "tertiary-container": "#50e1f9",
+                    "secondary-dim": "#a40113",
+                    "secondary-fixed": "#ffc3bd",
+                    "primary-container": "#ff793e",
+                    "inverse-on-surface": "#9c9d9d",
+                    "inverse-primary": "#fe5f00",
+                    "secondary-fixed-dim": "#ffafa8",
+                    "background": "#f6f6f6",
+                    "surface-variant": "#dbdddd",
+                    "on-primary": "#ffefea",
+                    "surface-container-highest": "#dbdddd",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#fb5151",
+                    "primary": "#a13900",
+                    "surface": "#f6f6f6",
+                    "tertiary-dim": "#005864",
+                    "on-primary-container": "#431300",
+                    "on-error-container": "#570008",
+                    "tertiary-fixed": "#50e1f9",
+                    "on-surface": "#2d2f2f",
+                    "on-error": "#ffefee",
+                    "on-tertiary-container": "#004d58",
+                    "surface-container": "#e7e8e8",
+                    "primary-dim": "#8d3100"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Lexend"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Lexend"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-coastal {
+            text-shadow: 0 4px 12px rgba(0, 101, 115, 0.1);
+        }
+        .asymmetric-clip {
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+        }
+        .noise-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-tertiary-container selection:text-on-tertiary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-xl shadow-orange-900/5">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="text-2xl font-black italic text-orange-700 dark:text-orange-500 font-lexend tracking-tight uppercase">
+            KINETIC COASTAL
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-orange-600 dark:text-orange-400 border-b-4 border-orange-600 font-bold font-lexend tracking-tight uppercase" href="#">Pradžia</a>
+<a class="text-slate-600 dark:text-slate-300 font-medium font-lexend tracking-tight uppercase hover:text-orange-500 transition-colors duration-300" href="#">Treniruotės</a>
+<a class="text-slate-600 dark:text-slate-300 font-medium font-lexend tracking-tight uppercase hover:text-orange-500 transition-colors duration-300" href="#">Naujienos</a>
+<a class="text-slate-600 dark:text-slate-300 font-medium font-lexend tracking-tight uppercase hover:text-orange-500 transition-colors duration-300" href="#">Registracija</a>
+</div>
+<button class="bg-primary hover:bg-primary-dim text-on-primary font-bold px-8 py-3 rounded-full transition-all duration-200 scale-95 hover:scale-100 uppercase tracking-wider text-sm shadow-lg shadow-primary/20">
+            Dalyvauti stovykloje
+        </button>
+</nav>
+</header>
+<main class="relative">
+<div class="absolute inset-0 noise-texture"></div>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-surface-container-low to-surface">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+<div class="relative z-10">
+<span class="inline-block px-4 py-1.5 bg-tertiary-container text-on-tertiary-container font-label text-sm rounded-full mb-6 uppercase tracking-widest font-bold">Palanga 2024</span>
+<h1 class="text-5xl md:text-7xl font-black font-headline text-on-background leading-[0.9] tracking-tighter mb-6 italic">
+                    KREPŠINIO <span class="text-primary block">TRENIRUOTĖS PALANGOJE</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-md mb-8 leading-relaxed">
+                    Tobulink įgūdžius ten, kur ošia pušynas ir jūra. Elitinis pasiruošimas naujai Baltijos krepšinio talentų kartai.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary font-bold px-10 py-5 rounded-full flex items-center gap-3 hover:shadow-2xl transition-all">
+                        TYRINĖTI PROGRAMAS <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-surface-container-lowest text-on-surface font-bold px-10 py-5 rounded-full border-2 border-outline-variant/20 hover:bg-surface-container transition-all">
+                        ŽIŪRĖTI VIDEO
+                    </button>
+</div>
+</div>
+<div class="relative group">
+<!-- 9:16 Video Frame -->
+<div class="relative aspect-[9/16] max-w-[340px] mx-auto bg-slate-800 rounded-[3rem] overflow-hidden border-[12px] border-surface-container-highest shadow-[0_50px_100px_-20px_rgba(161,57,0,0.2)] rotate-3 group-hover:rotate-0 transition-transform duration-700">
+<img class="w-full h-full object-cover opacity-80" data-alt="Young basketball player performing a layup on an outdoor court at sunset, high energy vertical action shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAfzt5FwexRxtijxxQpuUvPeRJNVGVI1uPm6PQoo4Nyaom6W80La_SNr3g7gsJOWiLGtXpQS9Fls6E-TNUJrYavZ0RChQ4Htpl4_dIhyO24Bv2BvIfhlPBxfoPX_nq4-gQ06H42enWDaUiIwcYs-GGsSf7kzqOsN0_9usl3OmBS9LLJmLZSuda1-OqPgqGL4rcq0syLP_Xpy59AStt-rltKFFvlNKEGRmtKRQxFDi-_8Lcgy6fhFh2awpLGs9YjXX8ehOOKPJQ8tc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end p-8">
+<span class="material-symbols-outlined text-white text-6xl mb-4" data-weight="fill">play_circle</span>
+<p class="text-white font-bold text-xl leading-tight">Pajūrio pratimai: I dalis</p>
+</div>
+</div>
+<!-- Decor Elements -->
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-tertiary/10 rounded-full blur-3xl"></div>
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="absolute top-0 right-0 -z-10 translate-x-1/2 -translate-y-1/2 opacity-10">
+<p class="text-[20rem] font-black text-outline font-headline select-none">PALANGA</p>
+</div>
+</section>
+<!-- Training Section -->
+<section class="py-24 bg-surface-container-lowest relative">
+<div class="max-w-7xl mx-auto px-6 space-y-32">
+<!-- Technique -->
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/2 relative">
+<div class="absolute inset-0 bg-primary rotate-3 rounded-2xl"></div>
+<img class="relative rounded-2xl w-full h-[450px] object-cover shadow-2xl -rotate-1 hover:rotate-0 transition-transform duration-500" data-alt="Close up of a coach correcting a young player's shooting form on a sun-drenched outdoor court" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbORtN_dzOyw0g7vy1Q5j5FWLwYNh-sNhlYpKC2pxj7fLjMiSrz575xnVtDvObaNDHtpVL9QJtX279Akj8BzojVRj6pbjgQhcx3iMSpDz_9RuOguDzERDE76yQ8yAV2NNTrRWhL6z3oKqM3X1X-cfpFtyeVpsHSRcWQ6ZuGSqM2u_XypbAk6z7ygFXk4dPmuCXK0Xb_kuzfjlyqgF83q1L-z0ndjBDU9gtqgBcD2jA4BsKHDW2g0Y_iQagYtLCnwMY1nAz7oh9JmU"/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-tertiary font-bold tracking-tighter text-5xl opacity-20 mb-4 block">01</span>
+<h2 class="text-5xl font-black font-headline text-on-background mb-6">Valdyk <span class="text-primary italic">Techniką</span></h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                        Mūsų „Coastal Precision“ metodika orientuota į biomechaniką ir metimo stabilumą. Išskaidome geriausių pasaulio snaiperių judesius į paprastus elementus jauniems atletams.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl border-l-4 border-tertiary">
+<span class="material-symbols-outlined text-tertiary">sports_basketball</span>
+<p class="font-bold">Tobulo metimo trajektorijos pratimai</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl border-l-4 border-tertiary">
+<span class="material-symbols-outlined text-tertiary">footprint</span>
+<p class="font-bold">Elitinė pusiausvyra ir kojų darbas</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-16">
+<div class="w-full md:w-1/2 relative">
+<div class="absolute inset-0 bg-tertiary -rotate-3 rounded-2xl"></div>
+<img class="relative rounded-2xl w-full h-[450px] object-cover shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500" data-alt="Group of diverse kids practicing ball handling drills in a line with focused expressions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy6ym3ANPIyo5415-vmwmOWWsSn8ijSwZKXU0-4yDIffWjtVm7Ce5BqyzPNKv6HuLg3Gw2mX_HWYLV0hduBWxuVwdoGkCyOQpZxoe2A4RjuujPxkQOKg38Nw8n0U05mbxMHcM_TQJl4ijotBUvjEevefg2IKkfn7s5eK3-75r74I6NpNl1tNVt-ODdD7R4mTu4HJOZzt47hKVdERf7Wna3E4hY4cZGUcehnZ9BguLdFra6iR0-8VZ03XM4K82EtSeVce6HzOXlDTw"/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-primary font-bold tracking-tighter text-5xl opacity-20 mb-4 block">02</span>
+<h2 class="text-5xl font-black font-headline text-on-background mb-6">Dinamiški <span class="text-tertiary italic">Įgūdžiai</span></h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                        Krepšinis nežaidžiamas vakuume. Ugdome kamuolio varymo ir sprendimų priėmimo įgūdžius, kurie tiesiogiai persikelia į greitą ir chaotišką tikrų rungtynių aplinką.
+                    </p>
+<div class="flex flex-wrap gap-3">
+<span class="px-6 py-2 bg-secondary-container text-on-secondary-container rounded-full font-bold">1v1 Izoliacija</span>
+<span class="px-6 py-2 bg-secondary-container text-on-secondary-container rounded-full font-bold">Aikštės Matymas</span>
+<span class="px-6 py-2 bg-secondary-container text-on-secondary-container rounded-full font-bold">Kamuolio Valdymas</span>
+</div>
+</div>
+</div>
+<!-- Games -->
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/2 relative">
+<div class="absolute inset-0 bg-primary rotate-3 rounded-2xl"></div>
+<img class="relative rounded-2xl w-full h-[450px] object-cover shadow-2xl -rotate-1 hover:rotate-0 transition-transform duration-500" data-alt="Aerial view of a 3x3 basketball game in progress on a bright blue and orange court surrounded by pine trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzuL5K62l7GwINxrFLF93obwV0HrLGLie5rECmF31yamL5uKNoaRUbZ9CE2HsjWCUlq-hlbpSHTyqScfvpL7y1Ob_bQeNoxo-5nU3VnX7DIabZccpVZTHMmTejYl9H67DsUfyCmuxdlrjhbBdjSFjpZMFe6ux5AKJUcSQgrwnsA9i2duuZdp1tr8F3BSWCuEy_st_TLK0IQJ1HFgRzTXxqAJ_SMpzJRvC4JSoRoYtGMavqBjtJtM32o5WEcQEjRlZhnkdnVjmv5y4"/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-tertiary font-bold tracking-tighter text-5xl opacity-20 mb-4 block">03</span>
+<h2 class="text-5xl font-black font-headline text-on-background mb-6">Palangos <span class="text-primary italic">Žaidynės</span></h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                        Kiekvieną penktadienį aikštėje užverda tikra kova. Per tarpusavio rungtynes vaikai mokosi, kas yra <span class="font-bold text-primary">komandinis darbas</span>, ugdo lyderystę ir, svarbiausia, <span class="font-bold text-primary">susiranda naujų draugų</span>. Tai šventinė krepšinio atmosfera, kurioje teorija tampa praktika.
+                    </p>
+<button class="bg-tertiary text-on-tertiary font-bold px-8 py-4 rounded-full flex items-center gap-3 hover:scale-105 transition-transform">
+                        ŽIŪRĖTI ŽAIDYNIŲ TVARKARAŠTĮ <span class="material-symbols-outlined">calendar_month</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- News Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h3 class="text-4xl font-black font-headline text-on-background uppercase tracking-tight">Žinios iš <span class="text-primary">Aikštelės</span></h3>
+<p class="text-on-surface-variant">Sek naujienas tiesiai iš krepšinio sostinės pajūryje.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">Visos naujienos <span class="material-symbols-outlined">open_in_new</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Major News -->
+<div class="md:col-span-2 relative group rounded-[2rem] overflow-hidden bg-slate-900 h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Professional basketball coach talking to a circle of attentive young athletes in a coastal gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbdBm_ZEWyQZQzmOYf_o0nbXXZ_0judJkrG0gsuqhnD2AaJrsPy1L7-bUdj160PjfJlJCLCGzIz66nQy4X0GWK09bMUo7dKqzRPRp7dGkBoNSiQfwJxRm4dV4WBjkIfsCWENpuP-XoERIQH-usFRJgqdvfCrmq6OOWjtep8CI9uPK7Yagrq6YHuNZFJh20iyxD3ZeeedSyAbmxJXH4JuJWnqftVv3jApCrSH23HrLZ0odeYLXqcpB_KLqoA6HvOU_F52UG-2tSs84"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">PRANEŠIMAS</span>
+<h4 class="text-3xl font-bold text-white mb-2 font-headline">Naujas treneris iš Eurolygos akademijos</h4>
+<p class="text-slate-300 max-w-lg">Džiaugiamės pranešę, kad nuo liepos mėnesio prie Kinetic Coastal šeimos jungiasi treneris Arvydas.</p>
+</div>
+</div>
+<!-- Small News 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-xl shadow-on-surface/5 flex flex-col justify-between hover:translate-y-[-8px] transition-transform">
+<div>
+<span class="text-tertiary text-xs font-bold mb-4 block uppercase tracking-widest">Patarimai</span>
+<h4 class="text-xl font-bold font-headline mb-4">5 pratimai metimo nuotoliui didinti</h4>
+</div>
+<p class="text-on-surface-variant text-sm mb-6">Ekspertų patarimai, kaip sukurti jėgą metimui iš kojų darbo.</p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container"></div>
+<span class="text-xs font-bold">Treneris S. Petrauskas</span>
+</div>
+</div>
+<!-- Small News 2 -->
+<div class="bg-primary p-8 rounded-[2rem] text-on-primary flex flex-col justify-between hover:translate-y-[-8px] transition-transform">
+<div>
+<span class="bg-white/20 text-xs font-bold px-2 py-1 rounded mb-4 inline-block">RENGINYS</span>
+<h4 class="text-xl font-bold font-headline mb-4">Paplūdimio 3x3 turnyras: Palanga Open</h4>
+</div>
+<p class="opacity-90 text-sm mb-6">Registracija į kasmetinę krepšinio šventę jau atvira U12 ir U14 kategorijoms.</p>
+<button class="text-white font-bold text-sm flex items-center gap-2">SKAITYTI DAUGIAU <span class="material-symbols-outlined text-sm">arrow_forward_ios</span></button>
+</div>
+<!-- Small News 3 -->
+<div class="bg-tertiary p-8 rounded-[2rem] text-on-tertiary flex flex-col justify-between md:col-span-2 hover:translate-y-[-8px] transition-transform overflow-hidden relative">
+<div class="relative z-10">
+<h4 class="text-2xl font-bold font-headline mb-4">Pajūrio Dvasia: Bendruomenės dėmesio centre</h4>
+<p class="opacity-90 max-w-md">Susipažinkite su vietos krepšinio entuziastais, remiančiais jaunųjų talentų augimą kurorte.</p>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 translate-x-1/4 translate-y-1/4">
+<span class="material-symbols-outlined text-[12rem]">waves</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Registration Section -->
+<section class="py-24 relative overflow-hidden">
+<div class="max-w-5xl mx-auto px-6">
+<div class="relative bg-on-background rounded-[3rem] p-12 md:p-20 text-center overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-tertiary/20"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl font-black font-headline text-white mb-6 uppercase tracking-tighter">Pasiruošęs <span class="text-primary-container">kovai?</span></h2>
+<p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">
+                        Registracija į 2024 m. vasaros stovyklą prasidėjo. Vietų skaičius ribotas siekiant užtikrinti aukščiausią treniruočių kokybę. Rezervuok vietą šiandien.
+                    </p>
+<div class="max-w-md mx-auto flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-white/10 border-0 rounded-full px-6 py-4 text-white placeholder:text-slate-400 focus:ring-2 focus:ring-primary-container text-lg" placeholder="Tėvų el. pašto adresas" type="email"/>
+<button class="bg-primary text-on-primary font-bold px-10 py-4 rounded-full text-lg hover:scale-105 transition-transform shadow-lg shadow-primary/30">
+                            PRISIJUNGTI
+                        </button>
+</div>
+<p class="mt-8 text-slate-400 text-sm font-medium">Jau užsiregistravo daugiau nei 200 jaunųjų krepšininkų.</p>
+</div>
+<!-- Decorative Court Lines -->
+<div class="absolute -bottom-10 -left-10 w-40 h-40 border-2 border-white/5 rounded-full"></div>
+<div class="absolute top-1/2 left-0 w-32 h-1 bg-white/5"></div>
+<div class="absolute top-1/2 right-0 w-32 h-1 bg-white/5"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[40px] mt-20 bg-slate-900 dark:bg-black font-plus-jakarta text-sm">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-black text-white mb-6">KINETIC COASTAL</div>
+<p class="text-slate-400 leading-relaxed mb-6">Ugdome elitinius krepšinio talentus pačioje Palangos širdyje. Kinetic Coastal – vieta, kur kuriami vasaros prisiminimai ir nugalėtojų mąstysena.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-xl">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-xl">camera_outdoor</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Akademija</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-white transition-all" href="#">Treniruočių programos</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all" href="#">Elitinės stovyklos</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all" href="#">Mūsų treneriai</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all" href="#">Sėkmės istorijos</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Resursai</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-white transition-all" href="#">Privatumo politika</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all" href="#">Taisyklės</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all" href="#">Susisiekite</a></li>
+<li><a class="text-slate-400 hover:text-white transition-all" href="#">Trenerių portalas</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Kontaktai</h5>
+<p class="text-slate-400 mb-2">Vytauto g. 12, Palanga</p>
+<p class="text-slate-400 mb-6">Lietuva, 00135</p>
+<a class="text-orange-500 font-bold underline" href="mailto:hello@kineticcoastal.lt">hello@kineticcoastal.lt</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-white/10 text-center md:text-left">
+<p class="text-slate-500">© 2024 Kinetic Coastal Basketball. Palanga, Lietuva.</p>
+</div>
+</footer>
+</body></html>

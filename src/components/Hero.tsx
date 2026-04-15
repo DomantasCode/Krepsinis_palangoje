@@ -28,12 +28,13 @@ export default function Hero() {
             Palanga 2026
           </span>
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-black font-headline text-on-background leading-[0.95] md:leading-[0.9] tracking-tight md:tracking-tighter mb-4 md:mb-6 italic">
-            KREPŠINIO{" "}
-            <span className="text-primary block">TRENIRUOTĖS PALANGOJE</span>
+            KREPŠINIS{" "}
+            <span className="text-primary block">VAIKAMS PALANGOJE</span>
           </h1>
           <p className="hidden md:block text-sm md:text-xl text-on-surface-variant max-w-md mx-auto md:mx-0 mb-5 md:mb-8 leading-relaxed">
-            Krepšinio treniruotės vaikams Palangoje. Technika, fizinis
-            pasiruošimas ir komandinis žaidimas gryname ore prie jūros.
+            Dieninės treniruotės ir vasaros stovyklos vaikams Palangoje.
+            Technika, fizinis pasiruošimas ir komandinis žaidimas gryname ore
+            prie jūros.
           </p>
           <div className="hidden md:flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
             <a
@@ -86,8 +87,9 @@ export default function Hero() {
         {/* Mobile-only text and buttons placed after video */}
         <div className="flex md:hidden flex-col items-center gap-5 w-full mt-6">
           <p className="text-sm text-center text-on-surface-variant max-w-md leading-relaxed px-4">
-            Krepšinio treniruotės vaikams Palangoje. Technika, fizinis
-            pasiruošimas ir komandinis žaidimas gryname ore prie jūros.
+            Dieninės treniruotės ir vasaros stovyklos vaikams Palangoje.
+            Technika, fizinis pasiruošimas ir komandinis žaidimas gryname ore
+            prie jūros.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a

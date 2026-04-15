@@ -21,13 +21,22 @@ const sections: TrainingSection[] = [
     numColor: "text-tertiary",
     title: (
       <>
-        Išmok <span className="text-primary italic">Techniką</span>
+        Tvirtas <span className="text-primary italic">Pagrindas</span>
       </>
     ),
-    text: "Geras metimas prasideda nuo taisyklingos formos. Mokome vaikus šaudyti taikliai, varyti kamuolį abiem rankomis ir atlikti perdavimus, kurie veikia tikrose rungtynėse. Kiekvienas pratimas skirtas tam, kad technika taptų antru instinktu.",
+    text: (
+      <>
+        Nuo pirmo kamuolio paėmimo iki tikro žaidėjo — kelias, kurį vaikas nueina
+        nejučia. Per žaidybinius pratimus vaikai išmoksta taisyklingo metimo,
+        driblingo ir perdavimų, todėl tobulėjimas ateina{" "}
+        <span className="font-bold text-primary">be spaudimo, bet su rezultatais</span>.
+        Po kelių savaičių tėvai pamato skirtumą, o vaikai pajunta, kaip tampa
+        taiklesni, greitesni ir drąsesni aikštėje.
+      </>
+    ),
     imageBg: "bg-primary rotate-3",
     imageRotate: "-rotate-1 hover:rotate-0",
-    image: "/training-1.png",
+    image: "/Gemini_Generated_Image_o7isr1o7isr1o7is.png",
     imageAlt: "Treneris koreguoja jaunojo žaidėjo metimo formą",
     reverse: false,
     extra: (
@@ -36,13 +45,13 @@ const sections: TrainingSection[] = [
           <span className="material-symbols-outlined text-tertiary">
             sports_basketball
           </span>
-          <p className="font-bold">Metimo mechanika ir taiklumas</p>
+          <p className="font-bold">Taisyklingas metimas ir kamuolio valdymas</p>
         </div>
         <div className="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl border-l-4 border-tertiary">
           <span className="material-symbols-outlined text-tertiary">
-            footprint
+            trending_up
           </span>
-          <p className="font-bold">Kamuolio valdymas ir perdavimai</p>
+          <p className="font-bold">Matoma pažanga jau po pirmų savaičių</p>
         </div>
       </div>
     ),
@@ -53,13 +62,22 @@ const sections: TrainingSection[] = [
     numColor: "text-primary",
     title: (
       <>
-        Būk <span className="text-tertiary italic">Stiprus</span>
+        Tvirtas <span className="text-tertiary italic">Charakteris</span>
       </>
     ),
-    text: "Treniruotėse stipriname ne tik krepšinio įgūdžius, bet ir fizinę formą. Vaikai lavina greitį, vikrumą ir ištvermę. Gera fizinė forma padeda žaisti geriau ir jaustis užtikrintai.",
+    text: (
+      <>
+        Krepšinis moko ne tik mesti kamuolį — jis moko mąstyti. Treniruotėse
+        vaikai mokosi suprasti žaidimą, pasirinkti teisingą sprendimą ir
+        pasitikėti savimi. Vaikams tai — žaidimas, kuriame jie tampa vis
+        gudresni. Tėvams —{" "}
+        <span className="font-bold text-tertiary">pasitikėjimas savimi ir gebėjimas nepasiduoti</span>
+        , kurie vaikui pravers toli už aikštės ribų.
+      </>
+    ),
     imageBg: "bg-primary rotate-3",
     imageRotate: "-rotate-1 hover:rotate-0",
-    image: "/training-2.png",
+    image: "/Gemini_Generated_Image_phvof8phvof8phvo.png",
     imageAlt: "Vaikai sportuoja lauke",
     reverse: true,
     extra: null,
@@ -70,22 +88,24 @@ const sections: TrainingSection[] = [
     numColor: "text-tertiary",
     title: (
       <>
-        Žaisk <span className="text-primary italic">Komandoje</span>
+        Tikra <span className="text-primary italic">Bendrystė</span>
       </>
     ),
     text: (
       <>
-        Krepšinis – tai komandinis žaidimas. Per rungtynes ir grupinius pratimus
-        vaikai mokosi{" "}
-        <span className="font-bold text-primary">pasitikėti komandos draugais</span>,
-        {" "}dalintis kamuoliu ir priimti sprendimus kartu. Čia susiranda{" "}
-        <span className="font-bold text-primary">naujų draugų</span> ir supranta,
-        kad pergalė visada priklauso visai komandai.
+        Komanda, į kurią vaikas{" "}
+        <span className="font-bold text-primary">nori grįžti kiekvieną savaitę</span>.
+        Rungtynėse, komandiniuose pratimuose ir{" "}
+        <span className="font-bold text-primary">vasaros stovyklose</span>{" "}
+        vaikai atranda, kas yra tikra komanda — kai pergalė dalinama, o
+        nesėkmė neša į priekį visus kartu. Čia formuojasi ne tik žaidėjai,
+        bet ir{" "}
+        <span className="font-bold text-primary">draugystės, kurios lieka visam gyvenimui</span>.
       </>
     ),
     imageBg: "bg-primary rotate-3",
     imageRotate: "-rotate-1 hover:rotate-0",
-    image: "/training-3.png",
+    image: "/Gemini_Generated_Image_rtlfovrtlfovrtlf.png",
     imageAlt: "Vaikai žaidžia krepšinį komandoje",
     reverse: false,
     extra: (
@@ -94,13 +114,13 @@ const sections: TrainingSection[] = [
           <span className="material-symbols-outlined text-tertiary">
             groups
           </span>
-          <p className="font-bold">Komandinės rungtynės kiekvieną savaitę</p>
+          <p className="font-bold">Komandinės rungtynės ir stovyklos</p>
         </div>
         <div className="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl border-l-4 border-tertiary">
           <span className="material-symbols-outlined text-tertiary">
-            handshake
+            diversity_3
           </span>
-          <p className="font-bold">Bendravimas ir lyderystė aikštėje</p>
+          <p className="font-bold">Draugai už krepšinio aikštės</p>
         </div>
       </div>
     ),
@@ -110,7 +130,25 @@ const sections: TrainingSection[] = [
 
 export default function Training() {
   return (
-    <section id="treniruotes" className="py-16 md:py-24 bg-surface-container-lowest relative">
+    <section id="treniruotes" className="pt-8 pb-16 md:py-24 bg-surface-container-lowest relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-20">
+          <span className="inline-block text-primary font-bold text-xs uppercase tracking-[0.2em] mb-3">
+            Ko mokome
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black font-headline text-on-background uppercase tracking-tight leading-[1.05] mb-4">
+            Trys pamatai, <span className="text-primary">ant kurių statome</span> žaidėją
+          </h2>
+          <p className="text-on-surface-variant text-sm md:text-lg leading-relaxed">
+            Nuo pirmo kamuolio paėmimo iki tikros komandos — štai ką vaikas parsineša iš kiekvienos treniruotės ir stovyklos Palangoje.
+          </p>
+          <div className="flex items-center justify-center gap-2 mt-6 md:mt-8">
+            <span className="h-px w-8 bg-outline-variant" />
+            <span className="material-symbols-outlined text-primary text-[20px]">sports_basketball</span>
+            <span className="h-px w-8 bg-outline-variant" />
+          </div>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 md:px-6 space-y-16 md:space-y-32">
         {sections.map((s, i) => (
           <div

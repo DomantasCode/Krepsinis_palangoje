@@ -2,34 +2,39 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "Kokio amžiaus vaikai gali dalyvauti treniruotėse?",
+    question: "Kokio amžiaus vaikai gali dalyvauti?",
     answer:
-      "Treniruotės skirtos vaikams nuo 6 iki 16 metų. Grupes formuojame pagal amžių ir patirtį, todėl kiekvienas vaikas treniruojasi tinkamo lygio grupėje.",
+      "Treniruotės ir stovyklos skirtos vaikams nuo 6 iki 16 metų. Grupes formuojame pagal amžių ir patirtį, todėl kiekvienas vaikas treniruojasi tinkamo lygio grupėje.",
   },
   {
     question: "Ar reikia turėti krepšinio patirties?",
     answer:
-      "Ne, patirtis nebūtina. Priimame ir visiškai pradedančiuosius. Treneriai pritaiko užduotis pagal kiekvieno vaiko lygį.",
+      "Ne, patirtis nebūtina. Į treniruotes ir stovyklas priimame ir visiškai pradedančiuosius. Treneriai pritaiko užduotis pagal kiekvieno vaiko lygį.",
   },
   {
-    question: "Kur vyksta treniruotės?",
+    question: "Kur vyksta treniruotės ir stovyklos?",
     answer:
-      "Treniruotės vyksta Palangoje, lauko aikštelėse. Esant blogam orui persikeliame į salę.",
+      "Viskas vyksta Palangoje, lauko aikštelėse prie jūros. Esant blogam orui persikeliame į salę.",
   },
   {
-    question: "Ką reikia atsinešti į treniruotę?",
+    question: "Kuo stovyklos skiriasi nuo treniruočių?",
+    answer:
+      "Dieninės treniruotės — nuoseklus darbas kelis kartus per savaitę. Vasaros stovyklos — intensyvesnė patirtis: sportas, disciplina, poilsis prie jūros ir komandos jausmas vienoje programoje.",
+  },
+  {
+    question: "Ką reikia atsinešti?",
     answer:
       "Patogią sportinę aprangą, sportbačius, gertuvę su vandeniu. Kamuolius ir kitą inventorių suteikiame mes.",
   },
   {
-    question: "Kiek kainuoja treniruotės?",
+    question: "Kiek kainuoja treniruotės ir stovyklos?",
     answer:
-      "Pirma treniruotė nemokama. Dėl tolimesnių kainų susisiekite su mumis el. paštu arba per Instagram.",
+      "Pirma treniruotė nemokama. Dėl tolimesnių treniruočių ir stovyklų kainų susisiekite su mumis telefonu, el. paštu arba per Instagram.",
   },
   {
     question: "Kaip užregistruoti vaiką?",
     answer:
-      "Galite užpildyti kontaktinę formą šioje svetainėje arba parašyti mums per Instagram. Susisieksime su jumis dėl detalių.",
+      "Treniruotėms registruokitės per Exoclass sistemą, o stovykloms — užpildykite Google formą registracijos skiltyje. Taip pat galite parašyti mums per Instagram ar paskambinti.",
   },
 ];
 
@@ -85,7 +90,7 @@ export default function FAQ() {
           </div>
 
           {/* Contact form */}
-          <div className="relative bg-on-background rounded-[2rem] p-8 md:p-12 overflow-hidden shadow-2xl">
+          <div id="kontaktai" className="relative bg-on-background rounded-[2rem] p-8 md:p-12 overflow-hidden shadow-2xl scroll-mt-20">
             <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-tertiary/20" />
             <div className="relative z-10">
               <h3 className="text-xl md:text-3xl font-black font-headline text-white mb-2 uppercase tracking-tighter">
@@ -94,13 +99,22 @@ export default function FAQ() {
               <p className="text-slate-300 text-sm md:text-base mb-4">
                 Turite klausimų? Parašykite mums arba paskambinkite.
               </p>
-              <a
-                href="tel:+37061240647"
-                className="inline-flex items-center gap-2 text-primary-container font-bold mb-8 hover:underline"
-              >
-                <span className="material-symbols-outlined text-xl">call</span>
-                +370 (612) 40 647
-              </a>
+              <div className="flex flex-col gap-2 mb-8">
+                <a
+                  href="tel:+37068668100"
+                  className="inline-flex items-center gap-2 text-primary-container font-bold hover:underline"
+                >
+                  <span className="material-symbols-outlined text-xl">call</span>
+                  +370 686 68100
+                </a>
+                <a
+                  href="mailto:info@krepsinispalangoje.lt"
+                  className="inline-flex items-center gap-2 text-primary-container font-bold hover:underline"
+                >
+                  <span className="material-symbols-outlined text-xl">mail</span>
+                  info@krepsinispalangoje.lt
+                </a>
+              </div>
               <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
                 <input
                   className="bg-white/10 border-0 rounded-xl px-5 py-3.5 text-white placeholder:text-slate-400 focus:ring-2 focus:ring-primary-container text-base outline-none"

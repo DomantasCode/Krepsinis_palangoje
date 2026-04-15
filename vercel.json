@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/admin",
+      "destination": "https://krepsinis-palangoje.sanity.studio",
+      "permanent": false
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "https://krepsinis-palangoje.sanity.studio/:path*",
+      "permanent": false
+    }
+  ]
+}

@@ -15,13 +15,20 @@ export default function Footer() {
             <a className="hover:text-white transition-all" href="#registracija">Kontaktai</a>
             <a className="hover:text-white transition-all" href="#registracija-forma">Registracija</a>
           </div>
-          <div className="flex sm:hidden items-center gap-5 mt-2">
+          <div className="flex sm:hidden flex-col items-start gap-2 mt-2">
             <a
-              href="tel:+37061240647"
+              href="tel:+37068668100"
               className="flex items-center gap-2 text-slate-400 hover:text-white transition-all"
             >
               <span className="material-symbols-outlined text-primary-container text-base">call</span>
-              +370 (612) 40 647
+              +370 686 68100
+            </a>
+            <a
+              href="mailto:info@krepsinispalangoje.lt"
+              className="flex items-center gap-2 text-slate-400 hover:text-white transition-all"
+            >
+              <span className="material-symbols-outlined text-primary-container text-base">mail</span>
+              info@krepsinispalangoje.lt
             </a>
             <a
               href="https://www.instagram.com/skm_treniruotespalangoje/"
@@ -40,13 +47,20 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-6">
           <p className="text-slate-500">&copy; 2025 Krepšinis Palangoje. Palanga, Lietuva.</p>
-          <div className="hidden sm:flex items-center gap-5">
+          <div className="hidden sm:flex flex-wrap items-center gap-x-5 gap-y-2">
             <a
-              href="tel:+37061240647"
+              href="tel:+37068668100"
               className="flex items-center gap-2 text-slate-400 hover:text-white transition-all"
             >
               <span className="material-symbols-outlined text-primary-container text-base">call</span>
-              +370 (612) 40 647
+              +370 686 68100
+            </a>
+            <a
+              href="mailto:info@krepsinispalangoje.lt"
+              className="flex items-center gap-2 text-slate-400 hover:text-white transition-all"
+            >
+              <span className="material-symbols-outlined text-primary-container text-base">mail</span>
+              info@krepsinispalangoje.lt
             </a>
             <a
               href="https://www.instagram.com/skm_treniruotespalangoje/"

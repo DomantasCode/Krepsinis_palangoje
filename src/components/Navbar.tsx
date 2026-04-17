@@ -16,9 +16,14 @@ export default function Navbar() {
       <nav className="flex justify-between items-center max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20">
         <a
           href="#pradzia"
-          className="text-2xl font-black italic text-primary font-headline leading-none"
+          className="flex items-center shrink-0"
+          aria-label="Krepšinis Palangoje"
         >
-          LOGO
+          <img
+            src="/KP_logo.png"
+            alt="Krepšinis Palangoje"
+            className="h-20 md:h-28 w-auto object-contain translate-y-1 md:translate-y-1.5"
+          />
         </a>
 
         {/* Desktop nav */}

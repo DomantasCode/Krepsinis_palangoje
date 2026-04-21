@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PortableText, type PortableTextComponents, type PortableTextBlock } from "@portabletext/react";
 import { fetchNews, fetchUpcomingEvent, urlFor, type SanityNewsItem } from "../lib/sanity";
 import { useModalLock } from "../hooks/useModalLock";
@@ -455,6 +455,16 @@ export default function News() {
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState<NewsCardData | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const [headInView, setHeadInView] = useState(false);
+  const headRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = headRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setHeadInView(true); obs.disconnect(); } }, { threshold: 0.1 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   useEffect(() => {
     Promise.all([fetchNews(), fetchUpcomingEvent()])
@@ -476,7 +486,7 @@ export default function News() {
     <>
       <section id="naujienos" className="py-16 md:py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 md:mb-12 gap-3 md:gap-4">
+          <div ref={headRef} className={`flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 md:mb-12 gap-3 md:gap-4 animate-on-scroll ${headInView ? "in-view" : ""}`}>
             <div>
               <h3 className="text-2xl md:text-4xl font-black font-headline text-on-background uppercase tracking-tight">
                 Žinios iš <span className="text-primary">Aikštelės</span>
@@ -496,7 +506,7 @@ export default function News() {
             ) : (
               <a
                 className="text-primary font-bold flex items-center gap-2 hover:underline shrink-0"
-                href="https://www.instagram.com/skm_treniruotespalangoje/"
+                href="https://www.instagram.com/krepsinispalangoje/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -533,7 +543,10 @@ export default function News() {
                   }`}
                 >
                   {featured && (
-                    <div className={upcomingEvent ? "md:col-span-2" : ""}>
+                    <div
+                      className={upcomingEvent ? "md:col-span-2" : ""}
+                      style={{ animation: "fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s both" }}
+                    >
                       <FeaturedCard
                         item={featured}
                         onClick={() => setSelected({ ...featured, keepMainImage: true })}
@@ -542,10 +555,12 @@ export default function News() {
                     </div>
                   )}
                   {upcomingEvent && (
-                    <UpcomingEventCard
-                      event={upcomingEvent}
-                      onClick={() => setSelected(upcomingEvent)}
-                    />
+                    <div style={{ animation: "fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.25s both" }}>
+                      <UpcomingEventCard
+                        event={upcomingEvent}
+                        onClick={() => setSelected({ ...upcomingEvent, keepMainImage: true })}
+                      />
+                    </div>
                   )}
                 </div>
               )}
@@ -556,15 +571,21 @@ export default function News() {
                   }`}
                 >
                   {bottomAnnouncement && (
-                    <div className={community ? "md:col-span-2" : ""}>
+                    <div
+                      className={community ? "md:col-span-2" : ""}
+                      style={{ animation: "fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s both" }}
+                    >
                       <SmallCard
                         item={{ ...bottomAnnouncement, image: undefined }}
-                        onClick={() => setSelected(bottomAnnouncement)}
+                        onClick={() => setSelected({ ...bottomAnnouncement, keepMainImage: true })}
                       />
                     </div>
                   )}
                   {community && (
-                    <div className={bottomAnnouncement ? "md:col-span-4" : ""}>
+                    <div
+                      className={bottomAnnouncement ? "md:col-span-4" : ""}
+                      style={{ animation: "fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.55s both" }}
+                    >
                       <SmallCard
                         item={community}
                         onClick={() => setSelected({ ...community, keepMainImage: true })}
@@ -601,7 +622,7 @@ export default function News() {
         <AllAnnouncementsModal
           items={announcements}
           onClose={() => setShowAll(false)}
-          onSelect={setSelected}
+          onSelect={(item) => setSelected({ ...item, keepMainImage: true })}
         />
       )}
     </>

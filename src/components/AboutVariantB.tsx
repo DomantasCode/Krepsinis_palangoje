@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCountUp } from "../hooks/useCountUp";
+import { useInView } from "../hooks/useInView";
 
 type ModalId = "treniruotes" | "stovyklos" | null;
 
@@ -51,6 +52,9 @@ const modals: Record<Exclude<ModalId, null>, ModalContent> = {
 export default function AboutVariantB() {
   const { ref, value } = useCountUp(20);
   const [openModal, setOpenModal] = useState<ModalId>(null);
+  const { ref: headRef, inView: headInView } = useInView();
+  const { ref: leftRef, inView: leftInView } = useInView();
+  const { ref: rightRef, inView: rightInView } = useInView();
 
   useEffect(() => {
     if (openModal) {
@@ -93,13 +97,12 @@ export default function AboutVariantB() {
       onClick={() => setOpenModal("treniruotes")}
       className="group relative flex items-stretch h-[170px] md:h-[190px] bg-gradient-to-br from-surface-container-lowest to-primary/[0.03] rounded-3xl overflow-hidden [mask-image:linear-gradient(#000,#000)] border border-outline-variant/30 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 text-left cursor-pointer w-full"
     >
-      <div className="relative w-36 md:w-44 shrink-0 overflow-hidden h-full bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 border-r border-dashed border-primary/20 flex flex-col items-center justify-center gap-1.5 text-center px-2">
-        <span className="material-symbols-outlined text-3xl md:text-4xl text-primary/40">
-          image
-        </span>
-        <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-primary/60 leading-tight">
-          Čia bus jūsų nuotrauka
-        </p>
+      <div className="relative w-36 md:w-44 shrink-0 overflow-hidden h-full">
+        <img
+          src="/Gemini_Generated_Image_yrgln1yrgln1yrgl.png"
+          alt="Dieninės treniruotės"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
       </div>
 
       <div className="flex-1 p-4 md:p-5 flex flex-col justify-center min-w-0">
@@ -132,13 +135,12 @@ export default function AboutVariantB() {
       onClick={() => setOpenModal("stovyklos")}
       className="group relative flex items-stretch h-[170px] md:h-[190px] bg-gradient-to-br from-surface-container-lowest to-tertiary/[0.03] rounded-3xl overflow-hidden [mask-image:linear-gradient(#000,#000)] border border-outline-variant/30 hover:border-tertiary/50 hover:shadow-xl hover:shadow-tertiary/10 hover:-translate-y-1 transition-all duration-300 text-left cursor-pointer w-full"
     >
-      <div className="relative w-36 md:w-44 shrink-0 overflow-hidden h-full bg-gradient-to-br from-tertiary/15 via-tertiary/10 to-tertiary/5 border-r border-dashed border-tertiary/20 flex flex-col items-center justify-center gap-1.5 text-center px-2">
-        <span className="material-symbols-outlined text-3xl md:text-4xl text-tertiary/40">
-          image
-        </span>
-        <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-tertiary/60 leading-tight">
-          Čia bus jūsų nuotrauka
-        </p>
+      <div className="relative w-36 md:w-44 shrink-0 overflow-hidden h-full">
+        <img
+          src="/Gemini_Generated_Image_97tlzz97tlzz97tl.png"
+          alt="Vasaros stovyklos"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
       </div>
 
       <div className="flex-1 p-4 md:p-5 flex flex-col justify-center min-w-0">
@@ -171,7 +173,7 @@ export default function AboutVariantB() {
       <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-tertiary/5 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+        <div ref={headRef as React.RefObject<HTMLDivElement>} className={`text-center max-w-2xl mx-auto mb-10 md:mb-14 animate-on-scroll ${headInView ? "in-view" : ""}`}>
           <span className="inline-block text-primary font-bold text-xs uppercase tracking-[0.2em] mb-3">
             Apie mus
           </span>
@@ -182,29 +184,27 @@ export default function AboutVariantB() {
 
         <div className="grid lg:grid-cols-5 gap-6 md:gap-10 items-stretch mb-12 md:mb-16">
           {/* Left: photo with animated counter overlay */}
-          <div className="lg:col-span-2">
+          <div ref={leftRef as React.RefObject<HTMLDivElement>} className={`lg:col-span-2 animate-on-scroll from-left ${leftInView ? "in-view" : ""}`}>
             <div
               ref={ref}
-              className="relative h-full min-h-[320px] md:min-h-[420px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 bg-gradient-to-br from-surface-container-high to-surface-container border-2 border-dashed border-outline-variant/50"
+              className="relative h-full min-h-[320px] md:min-h-[420px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10"
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
-                <span className="material-symbols-outlined text-5xl md:text-6xl text-on-surface-variant/40">
-                  image
-                </span>
-                <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-on-surface-variant/60 text-center px-4">
-                  Čia bus jūsų nuotrauka
-                </p>
-              </div>
+              <img
+                src="/Screenshot 2026-04-21 at 16.45.46.png"
+                alt="SKM Palanga komanda"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-              <div className="relative h-full flex flex-col justify-end p-7 md:p-9 text-on-background">
-                <div className="text-xs font-bold uppercase tracking-[0.25em] text-on-surface-variant mb-2">
+              <div className="relative h-full flex flex-col justify-end p-7 md:p-9 text-white">
+                <div className="text-xs font-bold uppercase tracking-[0.25em] text-white/70 mb-2">
                   Daugiau nei
                 </div>
-                <div className="flex items-baseline gap-1 font-black font-headline leading-none mb-3 text-primary">
+                <div className="flex items-baseline gap-1 font-black font-headline leading-none mb-3 text-white">
                   <span className="text-7xl md:text-9xl tracking-tighter">{value}</span>
                   <span className="text-4xl md:text-6xl">+</span>
                 </div>
-                <div className="text-base md:text-lg font-bold font-headline uppercase tracking-tight leading-tight text-on-background">
+                <div className="text-base md:text-lg font-bold font-headline uppercase tracking-tight leading-tight text-white">
                   metų patirties su<br />jaunaisiais krepšininkais
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function AboutVariantB() {
           </div>
 
           {/* Right: text */}
-          <div className="lg:col-span-3 flex flex-col justify-center">
+          <div ref={rightRef as React.RefObject<HTMLDivElement>} className={`lg:col-span-3 flex flex-col justify-center animate-on-scroll from-right ${rightInView ? "in-view" : ""}`} style={{ transitionDelay: "0.1s" }}>
             <p className="hidden md:block text-on-surface-variant leading-relaxed md:text-lg mb-5">
               Per daugiau nei 20 metų darbo su jaunaisiais krepšininkais supratome vieną dalyką –
               didžiausią progresą lemia ne atsitiktinės treniruotės, o{" "}

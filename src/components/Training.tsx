@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import type React from "react";
+import { useInView } from "../hooks/useInView";
 
 
 interface TrainingSection {
@@ -128,11 +130,57 @@ const sections: TrainingSection[] = [
   },
 ];
 
+function AnimatedSection({ s }: { s: TrainingSection }) {
+  const { ref, inView } = useInView();
+  const imgAnim = s.reverse ? "animate-on-scroll from-right" : "animate-on-scroll from-left";
+  const txtAnim = s.reverse ? "animate-on-scroll from-left" : "animate-on-scroll from-right";
+  return (
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className={`flex flex-col ${s.reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-10 md:gap-16`}
+    >
+      <div className={`w-full md:w-1/2 relative ${imgAnim} ${inView ? "in-view" : ""}`}>
+        <div className={`absolute inset-0 ${s.imageBg} rounded-2xl`} />
+        <img
+          className={`relative rounded-xl md:rounded-2xl w-full h-[220px] md:h-[450px] object-cover shadow-2xl ${s.imageRotate} transition-transform duration-500`}
+          alt={s.imageAlt}
+          src={s.image}
+        />
+      </div>
+      <div className={`w-full md:w-1/2 ${txtAnim} ${inView ? "in-view" : ""}`} style={{ transitionDelay: "0.1s" }}>
+        <span className={`${s.numColor} font-bold tracking-tighter text-3xl md:text-5xl opacity-20 mb-2 md:mb-4 block`}>
+          {s.num}
+        </span>
+        <h2 className="text-2xl md:text-5xl font-black font-headline text-on-background mb-3 md:mb-6">
+          {s.title}
+        </h2>
+        <p className="text-sm md:text-lg text-on-surface-variant leading-relaxed mb-5 md:mb-8">
+          {s.text}
+        </p>
+        {s.extra}
+        {s.cta && (
+          <a
+            href="#registracija-forma"
+            className="inline-flex items-center gap-2 md:gap-3 mt-4 bg-primary text-on-primary font-bold px-7 md:px-10 py-3 md:py-4 rounded-full hover:bg-primary-dim transition-all hover:scale-105 shadow-xl shadow-primary/25 text-sm md:text-base"
+          >
+            {s.cta}
+            <span className="material-symbols-outlined">arrow_forward</span>
+          </a>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Training() {
+  const { ref: headRef, inView: headInView } = useInView();
   return (
     <section id="treniruotes" className="pt-8 pb-16 md:py-24 bg-surface-container-lowest relative">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-20">
+        <div
+          ref={headRef as React.RefObject<HTMLDivElement>}
+          className={`text-center max-w-2xl mx-auto mb-10 md:mb-20 animate-on-scroll ${headInView ? "in-view" : ""}`}
+        >
           <span className="inline-block text-primary font-bold text-xs uppercase tracking-[0.2em] mb-3">
             Ko mokome
           </span>
@@ -151,46 +199,7 @@ export default function Training() {
       </div>
       <div className="max-w-7xl mx-auto px-4 md:px-6 space-y-16 md:space-y-32">
         {sections.map((s, i) => (
-          <div
-            key={i}
-            className={`flex flex-col ${s.reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-10 md:gap-16`}
-          >
-            {/* Image */}
-            <div className="w-full md:w-1/2 relative">
-              <div
-                className={`absolute inset-0 ${s.imageBg} rounded-2xl`}
-              />
-              <img
-                className={`relative rounded-xl md:rounded-2xl w-full h-[220px] md:h-[450px] object-cover shadow-2xl ${s.imageRotate} transition-transform duration-500`}
-                alt={s.imageAlt}
-                src={s.image}
-              />
-            </div>
-            {/* Text */}
-            <div className="w-full md:w-1/2">
-              <span
-                className={`${s.numColor} font-bold tracking-tighter text-3xl md:text-5xl opacity-20 mb-2 md:mb-4 block`}
-              >
-                {s.num}
-              </span>
-              <h2 className="text-2xl md:text-5xl font-black font-headline text-on-background mb-3 md:mb-6">
-                {s.title}
-              </h2>
-              <p className="text-sm md:text-lg text-on-surface-variant leading-relaxed mb-5 md:mb-8">
-                {s.text}
-              </p>
-              {s.extra}
-              {s.cta && (
-                <a
-                  href="#registracija-forma"
-                  className="inline-flex items-center gap-2 md:gap-3 mt-4 bg-primary text-on-primary font-bold px-7 md:px-10 py-3 md:py-4 rounded-full hover:bg-primary-dim transition-all hover:scale-105 shadow-xl shadow-primary/25 text-sm md:text-base"
-                >
-                  {s.cta}
-                  <span className="material-symbols-outlined">arrow_forward</span>
-                </a>
-              )}
-            </div>
-          </div>
+          <AnimatedSection key={i} s={s} />
         ))}
       </div>
     </section>

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useInView } from "../hooks/useInView";
 
 type CardId = "treniruotes" | "stovyklos";
 type ResidentChoice = "palanga" | "kita" | null;
@@ -40,6 +41,8 @@ export default function Registration() {
   };
 
   const selectedCampDate = CAMP_DATES.find((d) => d.id === campDate);
+  const { ref: headRef, inView: headInView } = useInView();
+  const { ref: cardsRef, inView: cardsInView } = useInView();
 
   return (
     <section
@@ -51,7 +54,7 @@ export default function Registration() {
       <div className="hidden md:block absolute bottom-16 left-8 md:left-16 w-24 h-24 border-2 border-tertiary/10 rounded-full" />
 
       <div className="relative max-w-7xl mx-auto px-4 md:px-6">
-        <div className="text-center mb-8 md:mb-12">
+        <div ref={headRef as React.RefObject<HTMLDivElement>} className={`text-center mb-8 md:mb-12 animate-on-scroll ${headInView ? "in-view" : ""}`}>
           <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-tertiary-container text-on-tertiary-container font-label text-xs md:text-sm rounded-full mb-4 md:mb-6 uppercase tracking-widest font-bold">
             Pirma treniruotė nemokama
           </span>
@@ -63,7 +66,7 @@ export default function Registration() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-start">
+        <div ref={cardsRef as React.RefObject<HTMLDivElement>} className={`grid lg:grid-cols-2 gap-6 md:gap-8 items-start animate-on-scroll ${cardsInView ? "in-view" : ""}`}>
           {/* Treniruotės — placeholder */}
           <div className="bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-xl shadow-on-surface/5 border border-outline-variant/30">
             <button
@@ -113,7 +116,7 @@ export default function Registration() {
                     Netrukus
                   </div>
                   <h5 className="text-lg md:text-2xl font-black font-headline text-on-background tracking-tight leading-tight mb-2">
-                    Čia bus treniruočių Exoclass
+                    Čia bus treniruočių registracija
                   </h5>
                   <p className="text-xs md:text-sm text-on-surface-variant max-w-sm mx-auto leading-relaxed">
                     Dieninių treniruočių registracijos forma atsiras netrukus.
@@ -214,13 +217,17 @@ export default function Registration() {
                       </div>
                     </button>
                   </div>
-                  <div className="mt-5 md:mt-6 flex items-start gap-2 text-[11px] md:text-xs text-on-surface-variant bg-surface-container-low rounded-xl p-3">
-                    <span className="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-px">
-                      info
-                    </span>
-                    <p className="leading-relaxed">
-                      Palangos gyventojams skirtas atskiras registracijos kanalas, todėl prašome pasirinkti tinkamą variantą.
-                    </p>
+                  <div className="mt-5 md:mt-6 relative overflow-hidden rounded-2xl bg-gradient-to-r from-tertiary to-tertiary/80 p-4 md:p-5 text-on-tertiary shadow-lg shadow-tertiary/25">
+                    <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-white/10" />
+                    <div className="absolute -right-1 -bottom-3 w-14 h-14 rounded-full bg-white/10" />
+                    <div className="relative flex items-center gap-3">
+                      <span className="material-symbols-outlined text-3xl shrink-0">star</span>
+                      <div>
+                        <p className="font-black font-headline text-sm md:text-base uppercase tracking-tight leading-tight">
+                          Palangos gyventojams — <span className="underline decoration-wavy decoration-white/60">NEMOKAMA!</span>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}

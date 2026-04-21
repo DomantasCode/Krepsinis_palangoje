@@ -41,7 +41,7 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="https://www.instagram.com/skm_treniruotespalangoje/"
+            href="https://www.instagram.com/krepsinispalangoje/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -100,7 +100,7 @@ export default function Navbar() {
             Registracija
           </a>
           <a
-            href="https://www.instagram.com/skm_treniruotespalangoje/"
+            href="https://www.instagram.com/krepsinispalangoje/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}

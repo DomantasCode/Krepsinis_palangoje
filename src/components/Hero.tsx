@@ -24,19 +24,31 @@ export default function Hero() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div className="relative z-10 text-center md:text-left">
-          <span className="hidden md:inline-block px-3 py-1 md:px-4 md:py-1.5 bg-tertiary-container text-on-tertiary-container font-label text-xs md:text-sm rounded-full mb-4 md:mb-6 uppercase tracking-widest font-bold">
+          <span
+            className="hidden md:inline-block px-3 py-1 md:px-4 md:py-1.5 bg-tertiary-container text-on-tertiary-container font-label text-xs md:text-sm rounded-full mb-4 md:mb-6 uppercase tracking-widest font-bold"
+            style={{ animation: "fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s both" }}
+          >
             Palanga 2026
           </span>
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black font-headline text-on-background leading-[0.95] md:leading-[0.9] tracking-tight md:tracking-tighter mb-4 md:mb-6 italic">
+          <h1
+            className="text-3xl sm:text-5xl md:text-7xl font-black font-headline text-on-background leading-[0.95] md:leading-[0.9] tracking-tight md:tracking-tighter mb-4 md:mb-6 italic"
+            style={{ animation: "fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s both" }}
+          >
             KREPŠINIS{" "}
             <span className="text-primary block">VAIKAMS PALANGOJE</span>
           </h1>
-          <p className="hidden md:block text-sm md:text-xl text-on-surface-variant max-w-md mx-auto md:mx-0 mb-5 md:mb-8 leading-relaxed">
+          <p
+            className="hidden md:block text-sm md:text-xl text-on-surface-variant max-w-md mx-auto md:mx-0 mb-5 md:mb-8 leading-relaxed"
+            style={{ animation: "fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.35s both" }}
+          >
             Dieninės treniruotės ir vasaros stovyklos vaikams Palangoje.
             Technika, fizinis pasiruošimas ir komandinis žaidimas gryname ore
             prie jūros.
           </p>
-          <div className="hidden md:flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
+          <div
+            className="hidden md:flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start"
+            style={{ animation: "fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.5s both" }}
+          >
             <a
               href="#registracija-forma"
               className="bg-primary text-on-primary font-bold px-6 md:px-10 py-3 md:py-5 rounded-full flex items-center gap-2 md:gap-3 hover:shadow-2xl transition-all text-xs md:text-base"
@@ -45,7 +57,7 @@ export default function Hero() {
               <span className="material-symbols-outlined">arrow_forward</span>
             </a>
             <a
-              href="https://www.instagram.com/skm_treniruotespalangoje/"
+              href="https://www.instagram.com/krepsinispalangoje/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-surface-container-lowest text-on-surface font-bold w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-outline-variant/20 hover:bg-surface-container transition-all flex items-center justify-center"
@@ -57,8 +69,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative group flex justify-center">
-          {/* 9:16 Video Frame */}
+        <div
+          className="relative group flex justify-center"
+          style={{ animation: "scaleIn 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both" }}
+        >
           <div className="relative aspect-9/16 w-full max-w-56 md:max-w-85 bg-slate-800 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-8 md:border-12 border-surface-container-highest shadow-[0_30px_60px_-15px_rgba(161,57,0,0.2)] md:shadow-[0_50px_100px_-20px_rgba(161,57,0,0.2)] rotate-3 group-hover:rotate-0 transition-transform duration-700">
             <video
               ref={videoRef}
@@ -79,12 +93,10 @@ export default function Hero() {
               </span>
             </button>
           </div>
-          {/* Decor */}
           <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-tertiary/10 rounded-full blur-3xl" />
           <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        {/* Mobile-only text and buttons placed after video */}
         <div className="flex md:hidden flex-col items-center gap-5 w-full mt-6">
           <p className="text-sm text-center text-on-surface-variant max-w-md leading-relaxed px-4">
             Dieninės treniruotės ir vasaros stovyklos vaikams Palangoje.
@@ -100,7 +112,7 @@ export default function Hero() {
             <span className="material-symbols-outlined">arrow_forward</span>
           </a>
           <a
-            href="https://www.instagram.com/skm_treniruotespalangoje/"
+            href="https://www.instagram.com/krepsinispalangoje/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-surface-container-lowest text-on-surface font-bold w-12 h-12 rounded-full border-2 border-outline-variant/20 hover:bg-surface-container transition-all flex items-center justify-center"
@@ -113,7 +125,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Background text */}
       <div className="absolute top-0 right-0 -z-10 translate-x-1/2 -translate-y-1/2 opacity-10 hidden lg:block">
         <p className="text-[20rem] font-black text-outline font-headline select-none whitespace-nowrap">
           PALANGA

@@ -31,7 +31,7 @@ export default function Footer() {
               info@krepsinispalangoje.lt
             </a>
             <a
-              href="https://www.instagram.com/skm_treniruotespalangoje/"
+              href="https://www.instagram.com/krepsinispalangoje/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-slate-400 hover:text-white transition-all"
@@ -63,7 +63,7 @@ export default function Footer() {
               info@krepsinispalangoje.lt
             </a>
             <a
-              href="https://www.instagram.com/skm_treniruotespalangoje/"
+              href="https://www.instagram.com/krepsinispalangoje/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-slate-400 hover:text-white transition-all"
